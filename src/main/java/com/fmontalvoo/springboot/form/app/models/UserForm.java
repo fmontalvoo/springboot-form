@@ -3,6 +3,7 @@ package com.fmontalvoo.springboot.form.app.models;
 import javax.validation.constraints.NotEmpty;
 
 public class UserForm {
+	private String id;
 	@NotEmpty
 	private String email;
 	@NotEmpty
@@ -18,10 +19,19 @@ public class UserForm {
 		this.username = username;
 	}
 
-	public UserForm(@NotEmpty String email, @NotEmpty String username, @NotEmpty String password) {
+	public UserForm(String id, @NotEmpty String email, @NotEmpty String username, @NotEmpty String password) {
+		this.id = id;
 		this.email = email;
 		this.username = username;
 		this.password = password;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getEmail() {
