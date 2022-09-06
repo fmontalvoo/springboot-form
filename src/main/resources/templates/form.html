@@ -6,21 +6,28 @@
 </head>
 <body>
 	<form th:action="@{/form}" method="post">
-	<div>
-		<label for="username">Usuario:</label>
-		<input type="text" name="username" id="username" required>
-	</div>
-	<br>
-	<div>
-		<label for="email">Correo:</label>
-		<input type="email" name="email" id="email" required>
-	</div>
-	<br>
-	<div>
-		<label for="password">Contrase&ntilde;a:</label>
-		<input type="password" name="password" id="password" required>
-	</div>
-	<button type="submit">Enviar</button>
+		<div>
+			<label for="username">Usuario:</label> <input type="text"
+				name="username" id="username" th:value="${userForm.username}">
+			<br> <small
+				th:if="${error != null && error.containsKey('username')}"
+				th:text="${error.username}"></small>
+		</div>
+		<br>
+		<div>
+			<label for="email">Correo:</label> <input type="email" name="email"
+				id="email" th:value="${userForm.email}"> <br> <small
+				th:if="${error != null && error.containsKey('email')}"
+				th:text="${error.get('email')}"></small>
+		</div>
+		<br>
+		<div>
+			<label for="password">Contrase&ntilde;a:</label> <input
+				type="password" name="password" id="password"> <br>
+			<small th:if="${error != null && error.containsKey('password')}"
+				th:text="${error.password}"></small>
+		</div>
+		<button type="submit">Enviar</button>
 	</form>
 </body>
 </html>

@@ -1,9 +1,28 @@
 package com.fmontalvoo.springboot.form.app.models;
 
+import javax.validation.constraints.NotEmpty;
+
 public class UserForm {
+	@NotEmpty
 	private String email;
+	@NotEmpty
 	private String username;
+	@NotEmpty
 	private String password;
+
+	public UserForm() {
+	}
+
+	public UserForm(@NotEmpty String email, @NotEmpty String username) {
+		this.email = email;
+		this.username = username;
+	}
+
+	public UserForm(@NotEmpty String email, @NotEmpty String username, @NotEmpty String password) {
+		this.email = email;
+		this.username = username;
+		this.password = password;
+	}
 
 	public String getEmail() {
 		return email;
