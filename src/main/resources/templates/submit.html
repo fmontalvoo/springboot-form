@@ -5,10 +5,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<span th:text="${username}"></span>
-	<br>
-	<span th:text="${email}"></span>
-	<br>
-	<span th:text="${password}"></span>
+	<ul>
+	<li th:text="${user.username}"></li>
+	<li th:text="${user.email}"></li>
+	<li th:text="${user.password}"></li>
+	</ul>
 </body>
 </html>
