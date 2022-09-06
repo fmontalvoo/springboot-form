@@ -1,8 +1,5 @@
 package com.fmontalvoo.springboot.form.app.controllers;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -24,15 +21,7 @@ public class FormController {
 
 	@PostMapping("/form")
 	public String submit(@Valid UserForm userForm, BindingResult result, Model model) {
-		System.out.println(result.hasErrors());
 		if (result.hasErrors()) {
-			Map<String, String> error = new HashMap<>();
-			result.getFieldErrors().forEach(err -> {
-				String key = err.getField();
-				String value = "El campo ".concat(key).concat(" presenta errores");
-				error.put(key, value);
-			});
-			model.addAttribute("error", error);
 			return "form";
 		}
 
