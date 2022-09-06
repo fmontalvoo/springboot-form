@@ -1,13 +1,21 @@
 package com.fmontalvoo.springboot.form.app.models;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 public class UserForm {
+
 	private String id;
-	@NotEmpty
+
+	@Email
+	@NotEmpty(message = "El email es obligatorio")
 	private String email;
+
 	@NotEmpty
+	@Size(message = "El nombre de usuario debe tener entre 3 y 8 caracteres", min = 3, max = 8)
 	private String username;
+
 	@NotEmpty
 	private String password;
 

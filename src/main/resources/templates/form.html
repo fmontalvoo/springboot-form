@@ -5,25 +5,42 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form th:action="@{/form}" th:object="${userForm}" method="post">
+	<form
+		th:action="@{/form}"
+		th:object="${userForm}"
+		method="post"
+	>
 		<div>
-			<label for="username">Usuario:</label> <input type="text"
-				id="username" th:field="*{username}"> <br> <small
-				th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></small>
+			<label for="username">Usuario:</label> <input
+				type="text"
+				id="username"
+				th:field="*{username}"
+			> <br> <small
+				th:if="${#fields.hasErrors('username')}"
+				th:errors="*{username}"
+			></small>
 		</div>
 		<br>
 		<div>
-			<label for="email">Correo:</label> <input type="email" id="email"
-				th:field="*{email}"> <br> <small
+			<label for="email">Correo:</label> <input
+				type="text"
+				id="email"
+				th:field="*{email}"
+			> <br> <small
 				th:if="${#fields.hasErrors('email')}"
-				th:errors="*{email}"></small>
+				th:errors="*{email}"
+			></small>
 		</div>
 		<br>
 		<div>
 			<label for="password">Contrase&ntilde;a:</label> <input
-				type="password" id="password" th:field="*{password}"> <br>
-			<small th:if="${#fields.hasErrors('password')}"
-				th:errors="*{password}"></small>
+				type="password"
+				id="password"
+				th:field="*{password}"
+			> <br> <small
+				th:if="${#fields.hasErrors('password')}"
+				th:uerrors="*{password}"
+			></small>
 		</div>
 		<button type="submit">Enviar</button>
 	</form>
