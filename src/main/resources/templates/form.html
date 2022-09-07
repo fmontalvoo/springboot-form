@@ -44,6 +44,17 @@
 		</div>
 		<br>
 		<div>
+			<label for="fechaNacimiento">Fecha nacimiento:</label> <input
+				type="date"
+				id="fechaNacimiento"
+				th:field="*{fechaNacimiento}"
+			> <br> <small
+				th:if="${#fields.hasErrors('fechaNacimiento')}"
+				th:errors="*{fechaNacimiento}"
+			></small>
+		</div>
+		<br>
+		<div>
 			<label for="email">Correo:</label> <input
 				type="text"
 				id="email"

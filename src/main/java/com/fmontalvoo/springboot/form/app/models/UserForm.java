@@ -1,13 +1,18 @@
 package com.fmontalvoo.springboot.form.app.models;
 
+import java.util.Date;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 //import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 //import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fmontalvoo.springboot.form.app.validators.IdentifierRegex;
 import com.fmontalvoo.springboot.form.app.validators.RequiredField;
@@ -26,6 +31,11 @@ public class UserForm {
 	@Max(65)
 	@NotNull
 	private Integer edad;
+
+	@Past
+	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date fechaNacimiento;
 
 //	@NotEmpty
 	@Size(message = "El nombre de usuario debe tener entre 3 y 8 caracteres", min = 3, max = 8)
@@ -72,6 +82,14 @@ public class UserForm {
 
 	public void setEdad(Integer edad) {
 		this.edad = edad;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	public String getUsername() {
