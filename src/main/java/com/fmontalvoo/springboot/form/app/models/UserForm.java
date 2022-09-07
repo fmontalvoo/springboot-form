@@ -12,7 +12,7 @@ import javax.validation.constraints.Past;
 //import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import org.springframework.format.annotation.DateTimeFormat;
+//import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fmontalvoo.springboot.form.app.validators.IdentifierRegex;
 import com.fmontalvoo.springboot.form.app.validators.RequiredField;
@@ -34,7 +34,7 @@ public class UserForm {
 
 	@Past
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 
 //	@NotEmpty

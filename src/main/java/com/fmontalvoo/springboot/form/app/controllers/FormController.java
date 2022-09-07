@@ -1,8 +1,12 @@
 package com.fmontalvoo.springboot.form.app.controllers;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,8 +31,12 @@ public class FormController {
 	private void initBinder(WebDataBinder binder) {
 //		binder.setValidator(validator);
 		binder.addValidators(validator);
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		format.setLenient(false);
+		binder.registerCustomEditor(Date.class, "fechaNacimiento", new CustomDateEditor(format, true));
 	}
-	
+
 	@GetMapping("/form")
 	public String form(Model model) {
 		UserForm userForm = new UserForm("", "");
