@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-//import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -36,6 +36,9 @@ public class UserForm {
 	@NotNull
 //	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
+
+	@NotBlank
+	private String pais;
 
 //	@NotEmpty
 	@Size(message = "El nombre de usuario debe tener entre 3 y 8 caracteres", min = 3, max = 8)
@@ -90,6 +93,14 @@ public class UserForm {
 
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
 	}
 
 	public String getUsername() {

@@ -55,6 +55,23 @@
 		</div>
 		<br>
 		<div>
+			<label for="pais">Pais:</label> <select
+				id="pais"
+				th:field="*{pais}"
+			>
+				<option value="">--Seleccionar--</option>
+				<option
+					th:each="pais : ${paises}"
+					th:value="${pais}"
+					th:text="${pais}"
+				></option>
+			</select> <br> <small
+				th:if="${#fields.hasErrors('pais')}"
+				th:errors="*{pais}"
+			></small>
+		</div>
+		<br>
+		<div>
 			<label for="email">Correo:</label> <input
 				type="text"
 				id="email"
