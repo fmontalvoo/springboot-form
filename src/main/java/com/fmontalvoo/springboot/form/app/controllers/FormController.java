@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.fmontalvoo.springboot.form.app.editors.CapitalizeNameEditor;
 import com.fmontalvoo.springboot.form.app.models.UserForm;
 import com.fmontalvoo.springboot.form.app.validators.UserFormValidator;
 
@@ -35,6 +36,8 @@ public class FormController {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		format.setLenient(false);
 		binder.registerCustomEditor(Date.class, "fechaNacimiento", new CustomDateEditor(format, true));
+
+		binder.registerCustomEditor(String.class, "username", new CapitalizeNameEditor());
 	}
 
 	@GetMapping("/form")
