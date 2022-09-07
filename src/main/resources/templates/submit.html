@@ -9,7 +9,7 @@
 		<li th:text="${user.id}"></li>
 		<li th:text="${user.username}"></li>
 		<li th:text="${user.email}"></li>
-		<li th:text="${user.pais}"></li>
+		<li th:text="${user.pais.nombre}"></li>
 		<li th:text="${user.edad}"></li>
 		<li th:text="${#dates.format(user.fechaNacimiento, 'dd/MM/yyyy')}"></li>
 		<!-- <li th:text="${#calendars.format(user.fechaNacimiento, 'dd-MM-yyyy')}"></li> -->

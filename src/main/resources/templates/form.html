@@ -57,17 +57,17 @@
 		<div>
 			<label for="pais">Pais:</label> <select
 				id="pais"
-				th:field="*{pais}"
+				th:field="*{pais.id}"
 			>
 				<option value="">--Seleccionar--</option>
 				<option
-					th:each="pais : ${paisesMap.entrySet()}"
-					th:value="${pais.key}"
-					th:text="${pais.value}"
+					th:each="pais : ${listaPaises}"
+					th:value="${pais.id}"
+					th:text="${pais.nombre}"
 				></option>
 			</select> <br> <small
-				th:if="${#fields.hasErrors('pais')}"
-				th:errors="*{pais}"
+				th:if="${#fields.hasErrors('pais.id')}"
+				th:errors="*{pais.id}"
 			></small>
 		</div>
 		<br>

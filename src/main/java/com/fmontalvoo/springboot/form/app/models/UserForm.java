@@ -2,6 +2,7 @@ package com.fmontalvoo.springboot.form.app.models;
 
 import java.util.Date;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -37,8 +38,8 @@ public class UserForm {
 //	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 
-	@NotBlank
-	private String pais;
+	@Valid
+	private Pais pais;
 
 //	@NotEmpty
 	@Size(message = "El nombre de usuario debe tener entre 3 y 8 caracteres", min = 3, max = 8)
@@ -95,11 +96,11 @@ public class UserForm {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getPais() {
+	public Pais getPais() {
 		return pais;
 	}
 
-	public void setPais(String pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
 

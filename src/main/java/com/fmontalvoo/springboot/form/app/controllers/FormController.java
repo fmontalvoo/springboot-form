@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.fmontalvoo.springboot.form.app.editors.CapitalizeNameEditor;
+import com.fmontalvoo.springboot.form.app.models.Pais;
 import com.fmontalvoo.springboot.form.app.models.UserForm;
 import com.fmontalvoo.springboot.form.app.validators.UserFormValidator;
 
@@ -63,6 +64,12 @@ public class FormController {
 		model.addAttribute("user", userForm);
 		status.setComplete();
 		return "submit";
+	}
+
+	@ModelAttribute("listaPaises")
+	public List<Pais> listaPaises() {
+		return Arrays.asList(new Pais(1, "EC", "Ecuador"), new Pais(2, "CO", "Colombia"), new Pais(3, "PE", "Perú"),
+				new Pais(4, "BO", "Bolivia"), new Pais(5, "VE", "Venezuela"));
 	}
 
 	@ModelAttribute("paises")
