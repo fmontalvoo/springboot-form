@@ -1,6 +1,7 @@
 package com.fmontalvoo.springboot.form.app.models;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 //import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -18,7 +19,7 @@ public class UserForm {
 	@Size(message = "El nombre de usuario debe tener entre 3 y 8 caracteres", min = 3, max = 8)
 	private String username;
 
-	@NotEmpty
+	@NotBlank
 	private String password;
 
 	public UserForm() {

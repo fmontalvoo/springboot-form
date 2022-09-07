@@ -18,9 +18,9 @@ public class UserFormValidator implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		UserForm form = (UserForm) target;
-		ValidationUtils.rejectIfEmpty(errors, "username", "NotEmpty.userForm.username");
-		
-		if(!form.getId().matches("^0[\\d]{9}")) {
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotBlank.userForm.username");
+
+		if (!form.getId().matches("^0[\\d]{9}")) {
 			errors.rejectValue("id", "Pattern.userForm.id");
 		}
 	}
