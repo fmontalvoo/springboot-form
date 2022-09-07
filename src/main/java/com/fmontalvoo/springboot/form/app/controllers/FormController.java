@@ -2,6 +2,7 @@ package com.fmontalvoo.springboot.form.app.controllers;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,10 +12,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.fmontalvoo.springboot.form.app.models.UserForm;
+import com.fmontalvoo.springboot.form.app.validators.UserFormValidator;
 
 @Controller
 @SessionAttributes("userForm")
 public class FormController {
+
+	@Autowired
+	private UserFormValidator validator;
 
 	@GetMapping("/form")
 	public String form(Model model) {
@@ -26,6 +31,7 @@ public class FormController {
 
 	@PostMapping("/form")
 	public String submit(@Valid UserForm userForm, BindingResult result, Model model, SessionStatus status) {
+		validator.validate(userForm, result);
 		if (result.hasErrors()) {
 			return "form";
 		}
