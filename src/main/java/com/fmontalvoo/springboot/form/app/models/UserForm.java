@@ -6,9 +6,12 @@ import javax.validation.constraints.NotEmpty;
 //import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.fmontalvoo.springboot.form.app.validators.IdentifierRegex;
+
 public class UserForm {
 
 //	@Pattern(regexp = "^0[\\d]{9}")
+	@IdentifierRegex
 	private String id;
 
 	@Email
