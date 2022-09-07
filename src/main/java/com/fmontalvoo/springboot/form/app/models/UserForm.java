@@ -48,7 +48,7 @@ public class UserForm {
 	private String username;
 
 	@NotEmpty
-	private List<String> roles;
+	private List<Role> roles;
 
 //	@NotBlank
 	@RequiredField
@@ -117,11 +117,11 @@ public class UserForm {
 		this.username = username;
 	}
 
-	public List<String> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<String> roles) {
+	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
 

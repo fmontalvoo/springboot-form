@@ -97,11 +97,11 @@
 			<div th:each="rol : ${listaRoles}">
 				<input
 					type="checkbox"
-					th:value="${rol}"
+					th:value="${rol.id}"
 					th:field="*{roles}"
 				> <label
 					th:for="${#ids.prev('roles')}"
-					th:text="${rol}"
+					th:text="${rol.nombre}"
 				></label>
 			</div>
 			<br> <small

@@ -25,9 +25,12 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import com.fmontalvoo.springboot.form.app.editors.CapitalizeNameEditor;
 import com.fmontalvoo.springboot.form.app.editors.PaisPropertyEditor;
+import com.fmontalvoo.springboot.form.app.editors.RolePropertyEditor;
 import com.fmontalvoo.springboot.form.app.models.Pais;
+import com.fmontalvoo.springboot.form.app.models.Role;
 import com.fmontalvoo.springboot.form.app.models.UserForm;
 import com.fmontalvoo.springboot.form.app.services.IPaisService;
+import com.fmontalvoo.springboot.form.app.services.IRoleService;
 import com.fmontalvoo.springboot.form.app.validators.UserFormValidator;
 
 @Controller
@@ -41,7 +44,13 @@ public class FormController {
 	private IPaisService paisService;
 
 	@Autowired
+	private IRoleService roleService;
+
+	@Autowired
 	private PaisPropertyEditor paisEditor;
+
+	@Autowired
+	private RolePropertyEditor roleEditor;
 
 	@InitBinder
 	private void initBinder(WebDataBinder binder) {
@@ -55,6 +64,7 @@ public class FormController {
 		binder.registerCustomEditor(String.class, "username", new CapitalizeNameEditor());
 
 		binder.registerCustomEditor(Pais.class, "pais", paisEditor);
+		binder.registerCustomEditor(Role.class, "roles", roleEditor);
 	}
 
 	@GetMapping("/form")
@@ -78,12 +88,8 @@ public class FormController {
 	}
 
 	@ModelAttribute("listaRoles")
-	public List<String> listaRoles() {
-		List<String> roles = new ArrayList<>();
-		roles.add("ROLE_USER");
-		roles.add("ROLE_ADMIN");
-		roles.add("ROLE_EDITOR");
-		return roles;
+	public List<Role> listaRoles() {
+		return roleService.listar();
 	}
 
 	@ModelAttribute("listaPaises")

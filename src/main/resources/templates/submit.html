@@ -11,10 +11,17 @@
 		<li th:text="${user.email}"></li>
 		<li th:text="${user.pais.nombre}"></li>
 		<li th:text="${user.edad}"></li>
-		<li th:text="${user.roles}"></li>
 		<li th:text="${#dates.format(user.fechaNacimiento, 'dd/MM/yyyy')}"></li>
 		<!-- <li th:text="${#calendars.format(user.fechaNacimiento, 'dd-MM-yyyy')}"></li> -->
 		<li th:text="${user.password}"></li>
+		<li>Roles:
+			<ol>
+				<li
+					th:each="rol : ${user.roles}"
+					th:text="${rol.nombre}"
+				></li>
+			</ol>
+		</li>
 	</ul>
 </body>
 </html>
