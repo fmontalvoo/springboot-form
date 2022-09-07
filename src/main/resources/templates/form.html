@@ -33,6 +33,17 @@
 		</div>
 		<br>
 		<div>
+			<label for="edad">Edad:</label> <input
+				type="text"
+				id="edad"
+				th:field="*{edad}"
+			> <br> <small
+				th:if="${#fields.hasErrors('edad')}"
+				th:errors="*{edad}"
+			></small>
+		</div>
+		<br>
+		<div>
 			<label for="email">Correo:</label> <input
 				type="text"
 				id="email"
