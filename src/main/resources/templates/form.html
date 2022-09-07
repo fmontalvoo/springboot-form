@@ -33,28 +33,6 @@
 		</div>
 		<br>
 		<div>
-			<label for="edad">Edad:</label> <input
-				type="text"
-				id="edad"
-				th:field="*{edad}"
-			> <br> <small
-				th:if="${#fields.hasErrors('edad')}"
-				th:errors="*{edad}"
-			></small>
-		</div>
-		<br>
-		<div>
-			<label for="fechaNacimiento">Fecha nacimiento:</label> <input
-				type="date"
-				id="fechaNacimiento"
-				th:field="*{fechaNacimiento}"
-			> <br> <small
-				th:if="${#fields.hasErrors('fechaNacimiento')}"
-				th:errors="*{fechaNacimiento}"
-			></small>
-		</div>
-		<br>
-		<div>
 			<label for="pais">Pais:</label> <select
 				id="pais"
 				th:field="*{pais}"
@@ -68,6 +46,51 @@
 			</select> <br> <small
 				th:if="${#fields.hasErrors('pais')}"
 				th:errors="*{pais}"
+			></small>
+		</div>
+		<br>
+		<div>
+			<label for="edad">Edad:</label> <input
+				type="text"
+				id="edad"
+				th:field="*{edad}"
+			> <br> <small
+				th:if="${#fields.hasErrors('edad')}"
+				th:errors="*{edad}"
+			></small>
+		</div>
+		<br>
+		<div>
+			<div>
+				<label for="genero1">Masculino:</label> <input
+					type="radio"
+					id="genero1"
+					th:field="*{genero}"
+					value="Masculino"
+				>
+			</div>
+			<div>
+				<label for="genero2">Femenino:</label> <input
+					type="radio"
+					id="genero2"
+					th:field="*{genero}"
+					value="Femenino"
+				>
+			</div>
+			<br> <small
+				th:if="${#fields.hasErrors('genero')}"
+				th:errors="*{genero}"
+			></small>
+		</div>
+		<br>
+		<div>
+			<label for="fechaNacimiento">Fecha nacimiento:</label> <input
+				type="date"
+				id="fechaNacimiento"
+				th:field="*{fechaNacimiento}"
+			> <br> <small
+				th:if="${#fields.hasErrors('fechaNacimiento')}"
+				th:errors="*{fechaNacimiento}"
 			></small>
 		</div>
 		<br>
@@ -109,6 +132,18 @@
 				th:uerrors="*{roles}"
 			></small>
 		</div>
+		<br>
+		<div>
+			<label for="habilitar">Habilitar:</label> <input
+				type="checkbox"
+				id="habilitar"
+				th:field="*{activar}"
+			> <br> <small
+				th:if="${#fields.hasErrors('activar')}"
+				th:errors="*{activar}"
+			></small>
+		</div>
+		<br>
 		<button type="submit">Enviar</button>
 	</form>
 </body>

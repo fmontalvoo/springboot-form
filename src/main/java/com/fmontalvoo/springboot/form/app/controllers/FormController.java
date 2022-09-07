@@ -70,7 +70,8 @@ public class FormController {
 	@GetMapping("/form")
 	public String form(Model model) {
 		UserForm userForm = new UserForm("", "");
-		userForm.setId("012");
+		userForm.setActivar(true);
+		userForm.setId("0123456789");
 		model.addAttribute("userForm", userForm);
 		return "form";
 	}

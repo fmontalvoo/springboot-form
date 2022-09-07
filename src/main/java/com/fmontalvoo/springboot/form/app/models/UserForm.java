@@ -39,6 +39,9 @@ public class UserForm {
 //	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 
+	@NotEmpty
+	private String genero;
+
 //	@Valid
 	@NotNull
 	private Pais pais;
@@ -53,6 +56,8 @@ public class UserForm {
 //	@NotBlank
 	@RequiredField
 	private String password;
+
+	private Boolean activar;
 
 	public UserForm() {
 	}
@@ -101,6 +106,14 @@ public class UserForm {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
 	public Pais getPais() {
 		return pais;
 	}
@@ -131,6 +144,14 @@ public class UserForm {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Boolean getActivar() {
+		return activar;
+	}
+
+	public void setActivar(Boolean activar) {
+		this.activar = activar;
 	}
 
 }
