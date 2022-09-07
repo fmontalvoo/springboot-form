@@ -72,6 +72,7 @@ public class FormController {
 		UserForm userForm = new UserForm("", "");
 		userForm.setActivar(true);
 		userForm.setId("0123456789");
+		userForm.setSecreto("Valor secreto...");
 		model.addAttribute("userForm", userForm);
 		return "form";
 	}

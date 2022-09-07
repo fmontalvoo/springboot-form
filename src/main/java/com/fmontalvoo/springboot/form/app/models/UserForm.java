@@ -59,6 +59,8 @@ public class UserForm {
 
 	private Boolean activar;
 
+	private String secreto;
+
 	public UserForm() {
 	}
 
@@ -152,6 +154,14 @@ public class UserForm {
 
 	public void setActivar(Boolean activar) {
 		this.activar = activar;
+	}
+
+	public String getSecreto() {
+		return secreto;
+	}
+
+	public void setSecreto(String secreto) {
+		this.secreto = secreto;
 	}
 
 }
