@@ -1,6 +1,7 @@
 package com.fmontalvoo.springboot.form.app.controllers;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -74,6 +75,15 @@ public class FormController {
 		model.addAttribute("user", userForm);
 		status.setComplete();
 		return "submit";
+	}
+
+	@ModelAttribute("listaRoles")
+	public List<String> listaRoles() {
+		List<String> roles = new ArrayList<>();
+		roles.add("ROLE_USER");
+		roles.add("ROLE_ADMIN");
+		roles.add("ROLE_EDITOR");
+		return roles;
 	}
 
 	@ModelAttribute("listaPaises")

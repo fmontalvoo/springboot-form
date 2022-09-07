@@ -1,6 +1,7 @@
 package com.fmontalvoo.springboot.form.app.models;
 
 import java.util.Date;
+import java.util.List;
 
 //import javax.validation.Valid;
 import javax.validation.constraints.Email;
@@ -45,6 +46,9 @@ public class UserForm {
 //	@NotEmpty
 	@Size(message = "El nombre de usuario debe tener entre 3 y 8 caracteres", min = 3, max = 8)
 	private String username;
+
+	@NotEmpty
+	private List<String> roles;
 
 //	@NotBlank
 	@RequiredField
@@ -111,6 +115,14 @@ public class UserForm {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
 
 	public String getPassword() {

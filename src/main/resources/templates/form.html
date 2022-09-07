@@ -92,6 +92,23 @@
 				th:uerrors="*{password}"
 			></small>
 		</div>
+		<div>
+			<label>Roles:</label>
+			<div th:each="rol : ${listaRoles}">
+				<input
+					type="checkbox"
+					th:value="${rol}"
+					th:field="*{roles}"
+				> <label
+					th:for="${#ids.prev('roles')}"
+					th:text="${rol}"
+				></label>
+			</div>
+			<br> <small
+				th:if="${#fields.hasErrors('roles')}"
+				th:uerrors="*{roles}"
+			></small>
+		</div>
 		<button type="submit">Enviar</button>
 	</form>
 </body>
