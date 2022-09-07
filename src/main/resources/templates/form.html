@@ -61,9 +61,9 @@
 			>
 				<option value="">--Seleccionar--</option>
 				<option
-					th:each="pais : ${paises}"
-					th:value="${pais}"
-					th:text="${pais}"
+					th:each="pais : ${paisesMap.entrySet()}"
+					th:value="${pais.key}"
+					th:text="${pais.value}"
 				></option>
 			</select> <br> <small
 				th:if="${#fields.hasErrors('pais')}"
