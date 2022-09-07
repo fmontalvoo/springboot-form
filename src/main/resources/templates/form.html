@@ -57,7 +57,7 @@
 		<div>
 			<label for="pais">Pais:</label> <select
 				id="pais"
-				th:field="*{pais.id}"
+				th:field="*{pais}"
 			>
 				<option value="">--Seleccionar--</option>
 				<option
@@ -66,8 +66,8 @@
 					th:text="${pais.nombre}"
 				></option>
 			</select> <br> <small
-				th:if="${#fields.hasErrors('pais.id')}"
-				th:errors="*{pais.id}"
+				th:if="${#fields.hasErrors('pais')}"
+				th:errors="*{pais}"
 			></small>
 		</div>
 		<br>

@@ -23,9 +23,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.fmontalvoo.springboot.form.app.editors.CapitalizeNameEditor;
+import com.fmontalvoo.springboot.form.app.editors.PaisPropertyEditor;
 import com.fmontalvoo.springboot.form.app.models.Pais;
 import com.fmontalvoo.springboot.form.app.models.UserForm;
-import com.fmontalvoo.springboot.form.app.services.PaisService;
+import com.fmontalvoo.springboot.form.app.services.IPaisService;
 import com.fmontalvoo.springboot.form.app.validators.UserFormValidator;
 
 @Controller
@@ -36,7 +37,10 @@ public class FormController {
 	private UserFormValidator validator;
 
 	@Autowired
-	private PaisService paisService;
+	private IPaisService paisService;
+
+	@Autowired
+	private PaisPropertyEditor paisEditor;
 
 	@InitBinder
 	private void initBinder(WebDataBinder binder) {
@@ -48,6 +52,8 @@ public class FormController {
 		binder.registerCustomEditor(Date.class, "fechaNacimiento", new CustomDateEditor(format, true));
 
 		binder.registerCustomEditor(String.class, "username", new CapitalizeNameEditor());
+
+		binder.registerCustomEditor(Pais.class, "pais", paisEditor);
 	}
 
 	@GetMapping("/form")
