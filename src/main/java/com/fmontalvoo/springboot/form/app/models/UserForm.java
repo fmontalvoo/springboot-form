@@ -2,10 +2,12 @@ package com.fmontalvoo.springboot.form.app.models;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class UserForm {
 
+	@Pattern(regexp = "^0[\\d]{9}")
 	private String id;
 
 	@Email

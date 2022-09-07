@@ -11,6 +11,17 @@
 		method="post"
 	>
 		<div>
+			<label for="username">Identificacion:</label> <input
+				type="text"
+				id="id"
+				th:field="*{id}"
+			> <br> <small
+				th:if="${#fields.hasErrors('id')}"
+				th:errors="*{id}"
+			></small>
+		</div>
+		<br>
+		<div>
 			<label for="username">Usuario:</label> <input
 				type="text"
 				id="username"
