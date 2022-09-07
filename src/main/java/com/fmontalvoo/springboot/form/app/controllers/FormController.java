@@ -25,6 +25,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import com.fmontalvoo.springboot.form.app.editors.CapitalizeNameEditor;
 import com.fmontalvoo.springboot.form.app.models.Pais;
 import com.fmontalvoo.springboot.form.app.models.UserForm;
+import com.fmontalvoo.springboot.form.app.services.PaisService;
 import com.fmontalvoo.springboot.form.app.validators.UserFormValidator;
 
 @Controller
@@ -33,6 +34,9 @@ public class FormController {
 
 	@Autowired
 	private UserFormValidator validator;
+
+	@Autowired
+	private PaisService paisService;
 
 	@InitBinder
 	private void initBinder(WebDataBinder binder) {
@@ -68,8 +72,7 @@ public class FormController {
 
 	@ModelAttribute("listaPaises")
 	public List<Pais> listaPaises() {
-		return Arrays.asList(new Pais(1, "EC", "Ecuador"), new Pais(2, "CO", "Colombia"), new Pais(3, "PE", "Perú"),
-				new Pais(4, "BO", "Bolivia"), new Pais(5, "VE", "Venezuela"));
+		return paisService.listar();
 	}
 
 	@ModelAttribute("paises")
