@@ -122,6 +122,7 @@
 					type="checkbox"
 					th:value="${rol.id}"
 					th:field="*{roles}"
+					th:checked="${#lists.contains(userForm.roles, rol)}"
 				> <label
 					th:for="${#ids.prev('roles')}"
 					th:text="${rol.nombre}"

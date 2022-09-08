@@ -9,6 +9,10 @@ public class Role {
 	public Role() {
 	}
 
+	public Role(Integer id) {
+		this.id = id;
+	}
+
 	public Role(Integer id, String nombre, String rol) {
 		this.id = id;
 		this.nombre = nombre;
@@ -37,6 +41,24 @@ public class Role {
 
 	public void setRol(String rol) {
 		this.rol = rol;
+	}
+
+	@Override
+	public String toString() {
+//		return this.id.toString();
+		return "Role [id=" + id + ", nombre=" + nombre + ", rol=" + rol + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+
+		if (!(obj instanceof Role))
+			return false;
+
+		Role role = (Role) obj;
+		return this.id != null && this.id.equals(role.getId());
 	}
 
 }

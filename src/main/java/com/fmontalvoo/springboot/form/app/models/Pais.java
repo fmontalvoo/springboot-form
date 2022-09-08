@@ -12,6 +12,10 @@ public class Pais {
 	public Pais() {
 	}
 
+	public Pais(@NotNull Integer id) {
+		this.id = id;
+	}
+
 	public Pais(Integer id, String codigo, String nombre) {
 		this.id = id;
 		this.codigo = codigo;
@@ -40,6 +44,12 @@ public class Pais {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	@Override
+	public String toString() {
+		return this.id.toString();
+//		return "Pais [id=" + id + ", codigo=" + codigo + ", nombre=" + nombre + "]";
 	}
 
 }

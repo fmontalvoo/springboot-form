@@ -164,4 +164,11 @@ public class UserForm {
 		this.secreto = secreto;
 	}
 
+	@Override
+	public String toString() {
+		return "UserForm [id=" + id + ", email=" + email + ", edad=" + edad + ", fechaNacimiento=" + fechaNacimiento
+				+ ", genero=" + genero + ", pais=" + pais + ", username=" + username + ", roles=" + roles
+				+ ", password=" + password + ", activar=" + activar + ", secreto=" + secreto + "]";
+	}
+
 }
