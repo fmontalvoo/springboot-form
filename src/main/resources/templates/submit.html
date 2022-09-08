@@ -6,25 +6,25 @@
 </head>
 <body>
 	<ul>
-		<li th:text="${user.id}"></li>
-		<li th:text="${user.username}"></li>
-		<li th:text="${user.email}"></li>
-		<li th:text="${user.pais.nombre}"></li>
-		<li th:text="${user.edad}"></li>
-		<li th:text="${user.genero}"></li>
-		<li th:text="${user.activar?'Habilitado':'Deshabilitado'}"></li>
-		<li th:text="${#dates.format(user.fechaNacimiento, 'dd/MM/yyyy')}"></li>
-		<!-- <li th:text="${#calendars.format(user.fechaNacimiento, 'dd-MM-yyyy')}"></li> -->
-		<li th:text="${user.password}"></li>
+		<li th:text="${userForm.id}"></li>
+		<li th:text="${userForm.username}"></li>
+		<li th:text="${userForm.email}"></li>
+		<li th:text="${userForm.pais.nombre}"></li>
+		<li th:text="${userForm.edad}"></li>
+		<li th:text="${userForm.genero}"></li>
+		<li th:text="${userForm.activar?'Habilitado':'Deshabilitado'}"></li>
+		<li th:text="${#dates.format(userForm.fechaNacimiento, 'dd/MM/yyyy')}"></li>
+		<!-- <li th:text="${#calendars.format(userForm.fechaNacimiento, 'dd-MM-yyyy')}"></li> -->
+		<li th:text="${userForm.password}"></li>
 		<li>Roles:
 			<ol>
 				<li
-					th:each="rol : ${user.roles}"
+					th:each="rol : ${userForm.roles}"
 					th:text="${rol.nombre}"
 				></li>
 			</ol>
 		</li>
-		<li th:text="${user.secreto}"></li>
+		<li th:text="${userForm.secreto}"></li>
 	</ul>
 </body>
 </html>
