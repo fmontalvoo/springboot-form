@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<section th:replace="components/time :: timeInterceptor"></section>
 	<form
 		th:action="@{/form}"
 		th:object="${userForm}"
@@ -144,8 +145,10 @@
 				th:errors="*{activar}"
 			></small>
 		</div>
-		<br>
-		<input type="hidden" th:field="*{secreto}">
+		<br> <input
+			type="hidden"
+			th:field="*{secreto}"
+		>
 		<button type="submit">Enviar</button>
 	</form>
 </body>

@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<section th:replace="components/time :: timeInterceptor"></section>
 	<ul>
 		<li th:text="${userForm.id}"></li>
 		<li th:text="${userForm.username}"></li>
